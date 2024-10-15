@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snake</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="icon" type="image/x-icon" href="images/snake_logo.jpg">
+    </head>
+
+    <body>
+        <header>
+            <div class="cabecera">
+                <img src="images/snake_logo.jpg" alt="Snake Logo">
+                <h1>SNAKE</h1>
+            </div>
+            <br />
+            <p class="descripcion">¡El famoso juego de la serpiente!</p>
+        </header>
+        <div class="inner"><b>Usuaria/o: </b><span class="usr"></span></div>
+        <div class="inner"><b>Dificultad: </b><span class="dificultad"></span></div>
+        <main>
+            <div class="nivel">
+                <p>Selecciona un nivel:</p>
+                <button id="b1" class="botonNivel">Fácil</button>
+                <button id="b2" class="botonNivel">Intermedio</button>
+                <button id="b3" class="botonNivel">Difícil</button>
+            </div>
+
+
+            <canvas id="juego" width="600" height="440"></canvas>
+
+            <!--Creamos un bloque en el que insertamos el código del formulario de inicio de sesión de la tarea 3 con algunos cambios-->
+            <div class="sesion">
+                <p>Inicia sesión con otra cuenta:<br></p>
+                <CENTER>                
+                    <HR COLOR="#FFF" WIDTH="60%" SIZE="4%">
+                    <BR>
+                    <TABLE WIDTH="95%" BORDER="0" CELLSPACING="0" CELLPADDING="8">
+                        <TR>
+                            <TD WIDTH="50%" ALIGN="center" BGCOLOR="#9bc58b"><B>Iniciar Sesi&oacute;n</B></TD>
+                            <TD WIDTH="50%" ALIGN="center" BGCOLOR="#7a9552">
+                            <!--Añadimos un id al botón para que el evento onclick abra una ventana modal donde se encuentre el registro-->
+                            <BUTTON ID="registrarse">Registrarse</BUTTON></TD>
+                        </TR>
+                    </TABLE>
+                    <BR>
+                    <H4><I>INICIAR SESI&Oacute;N</I></H4>
+                    <BR>
+                    <FORM  ID="inicioSesion" ACTION="" METHOD="post">
+                        <INPUT TYPE="text" ID="user_inicio" PLACEHOLDER="Usuaria/o*" REQUIRED="TRUE"> <br><br>
+                        <INPUT TYPE="password" ID="passw_inicio" PLACEHOLDER="Contrase&ntilde;a*" REQUIRED="TRUE"> <br><br>
+                        <H5><INPUT TYPE="checkbox">Recordar mis credenciales</H5><br>
+                        <A HREF="">Olvid&eacute; la contrase&ntilde;a</A>
+                        <BR>
+                        <INPUT ID="inicio" TYPE="submit" VALUE="Iniciar Sesi&oacute;n">
+                    </FORM>
+                </CENTER>
+            </div>
+        </main>
+
+        <div class="inner"><b>Puntuación: </b><span class="score"></span></div>
+        <div class="inner"><b>Puntuación MÁXIMA: </b><span class="max"></span></div>
+
+        <button id="miBoton">Jugar</button>
+
+        <footer>
+            <div class="social-links">
+                <a href="#"><img src="images/facebook_logo.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter_logo.jpg" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram_logo.jpg" alt="Instagram"></a>
+            </div>
+            <p><a href="readme.txt"><u>Instrucciones de juego</u></a></p>
+        </footer>
+
+
+
+        <!--Este es el último bloque, el que contiene el formulario de registro de la tarea 3-->
+        <div id="miModal" class="modal"> <!--Este div estará oculto hasta que se haga clic en el botón que cambia el valor de su propiedad display-->
+            <div class="modal_contenido">
+                <FONT FACE="verdana" SIZE="2">
+                    <CENTER>
+                        <A NAME="Arriba"></A>
+                    
+                        <HR COLOR="#000" WIDTH="60%" SIZE="4%">
+                        <BR>
+                        <TABLE WIDTH="45%" BORDER="0" CELLSPACING="0" CELLPADDING="8">
+                            <TR>
+                                <TD WIDTH="50%" ALIGN="center" BGCOLOR="#287e9b">
+                                    <A HREF="#">
+                                        <BUTTON STYLE="background-color: #8bb7c5; border-color: #287e9b;">Iniciar Sesi&oacute;n</BUTTON></A></TD>
+                                <TD WIDTH="50%" ALIGN="center" BGCOLOR="#8bb7c5"><B>Registrarse</B></TD>
+                            </TR>
+                        </TABLE>
+                        <H3><I>REGISTRARSE</I></H3>
+                    </CENTER>
+            
+                    <A HREF="#Abajo">Ir abajo</A>
+            
+                    <CENTER>  
+                        <TABLE WIDTH="45%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                            <TR>
+                                <TD WIDTH="50%" ALIGN="left">              
+                                    <FONT FACE="tahoma" SIZE="2">
+                                        <H4><B>Juega a este histórico juego:</B></H4><br>
+                                        <P><OL>
+                                                <LI>Rellena al menos los campos de Información de Usuaria/o</LI><BR>
+                                                <LI>Inicia sesi&oacute;n con su cuenta</LI><BR>
+                                                <LI>Selecciona un nivel de dificultad</LI><BR>
+                                                <LI>Disfruta del juego!!</LI><BR>
+                                            </OL>
+                                        </P>
+                                    </FONT>
+                                </TD>
+                                <TD WIDTH="50%" ALIGN="center">
+                                    <IMG SRC="images/snake_logo.jpg" ALT="Snake logo" height="50%" width="50%" border="0">
+                                </TD>
+                            </TR>
+                        </TABLE>
+            
+                    
+                        <HR COLOR="#FFFFFF" WIDTH="45%" SIZE="2%">
+                        <FORM ID="formRegistro" ACTION="" METHOD="post"> <!--Este formulario es a través del cuya ID gestionaremos los registros-->
+                            <H4>Datos personales: </H4>
+                            <TABLE WIDTH="45%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                                <TR>
+                                    <TD WIDTH="100%" ALIGN="left">
+                                        <P>
+                                            <UL>
+                                                <LI>Nombre: <INPUT TYPE="text" NAME="Nombre"></LI><BR>
+            
+                                                <LI>Apellidos: <INPUT TYPE="text" NAME="Apellidos"></LI><BR>
+            
+                                                <LI>Sexo: 
+                                                    <INPUT TYPE="radio" NAME="Sexo" VALUE="1">Mujer
+                                                    <INPUT TYPE="radio" NAME="Sexo" VALUE="2">Hombre
+                                                    <INPUT TYPE="radio" NAME="Sexo" VALUE="3">Otro
+                                                    <INPUT TYPE="radio" NAME="Sexo" VALUE="4" CHECKED>Prefiero no contestar
+                                                </LI><BR>
+                                            </UL>
+                                        </P>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                            <HR COLOR="#000" WIDTH="45%" SIZE="2%">
+            
+            
+                            <H4>Informaci&oacute;n de Usuaria/o: </H4>
+                            <TABLE WIDTH="45%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                                <TR>
+                                    <TD WIDTH="100%" ALIGN="left">
+                                        <P>
+                                            <UL>
+                                                <LI Style="Color:red;"><b>Nombre de Usuaria/o: </b><INPUT TYPE="text" NAME="User" REQUIRED="TRUE"></LI><BR>
+            
+                                                <LI Style="Color:red;"><b>Contrase&ntilde;a: </b><INPUT TYPE="password" NAME="Passw" REQUIRED="TRUE"></LI><BR>
+                                            </UL>
+                                        </P>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                            <HR COLOR="#000" WIDTH="45%" SIZE="2%">
+            
+            
+                            <H4>Datos de contacto: </H4>
+                            <TABLE WIDTH="45%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                                <TR>
+                                    <TD WIDTH="100%" ALIGN="left">
+                                        <P>
+                                            <UL>
+                                                <LI>Correo electr&oacute;nico: <INPUT TYPE="text" NAME="Email" SIZE="25"></LI><BR>
+            
+                                                <LI>Tel&eacute;fono: <INPUT TYPE="text" NAME="Tlfn" SIZE="12"></LI><BR>
+                                            
+                                                <LI>Provincia:
+                                                    <SELECT NAME="Prov" SIZE="1"><OPTION>---Provincia---</OPTION>
+                                                        <OPTION>A Coru&ntilde;a</OPTION>
+                                                        <OPTION>Lugo</OPTION>
+                                                        <OPTION>Ourense</OPTION>
+                                                        <OPTION>Pontevedra</OPTION>
+                                                    </SELECT>
+            
+                                                Localidad: <INPUT TYPE="text" NAME="Loc">
+                                            
+                                                CP: <INPUT TYPE="text" NAME="CP" MAXLENGHT="5" SIZE="5">
+                                                </LI><BR>
+            
+                                                <LI>Direcci&oacute;n: 
+                                                    <SELECT NAME="TipoVia" SIZE="1"><OPTION>---Tipo V&iacute;a---</OPTION>
+                                                        <OPTION>Avenida</OPTION><OPTION>Bulevar</OPTION><OPTION CHECKED>Calle</OPTION>
+                                                        <OPTION>Camino</OPTION><OPTION>Carretera</OPTION><OPTION>Corredera</OPTION>
+                                                        <OPTION>Parque</OPTION><OPTION>Paseo</OPTION><OPTION>Plaza</OPTION>
+                                                        <OPTION>Ronda</OPTION><OPTION>R&uacute;a</OPTION><OPTION>Traves&iacute;a</OPTION>
+                                                    </SELECT>
+                                                    <INPUT TYPE="text" NAME="Dir" SIZE="50" VALUE="Direcci&oacute;n completa (Nombre v&iacute;a, n&uacute;mero, piso, puerta, etc...)">
+                                                </LI><BR>
+            
+                                                <LI>Indicaciones adicionales: 
+                                                    <TEXTAREA NAME="Info" COLS="49" ROWS="4">Por ejemplo: Entregar el pedido al portero.</TEXTAREA>
+                                                </LI><BR>
+                                            </UL>
+                                        </P>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                            <HR COLOR="#000" WIDTH="45%" SIZE="2%">
+            
+            
+                            <H4>Preferencias: </H4>
+                            <TABLE WIDTH="45%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                                <TR>
+                                    <TD WIDTH="100%" ALIGN="left">
+                                        <P>
+                                            <UL>
+                                                <LI>Intereses:&emsp;<INPUT TYPE="checkbox">Libros&emsp;<INPUT TYPE="checkbox">Cine,TV y m&uacute;sica&emsp;
+                                                    <INPUT TYPE="checkbox">Electr&oacute;nica&emsp;<INPUT TYPE="checkbox">Inform&aacute;tica&emsp;<BR>
+                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<INPUT TYPE="checkbox">Videojuegos&emsp;<INPUT TYPE="checkbox">Hogar y jard&iacute;n&emsp;
+                                                    <INPUT TYPE="checkbox">Belleza y salud&emsp;<INPUT TYPE="checkbox">Ropa<BR>
+                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<INPUT TYPE="checkbox">Deportes&emsp;<INPUT TYPE="checkbox">Ciencia
+                                                    &emsp;<INPUT TYPE="checkbox">Coche y moto&emsp;<INPUT TYPE="checkbox">Alimentaci&oacute;n
+                                                </LI><BR>
+                                            </UL>
+                                        </P>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                            <HR COLOR="#000" WIDTH="45%" SIZE="2%">
+            
+            
+                            <TABLE WIDTH="45%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                                <TR>
+                                    <TD WIDTH="100%" ALIGN="left">
+                                        <P>
+                                            <INPUT TYPE="checkbox">Deseo recibir correos con ofertas por parte de la empresa<BR><BR>
+                                            <INPUT TYPE="checkbox">Acepto los <A HREF="">T&eacute;rminos y Condiciones Legales</A><BR><BR>
+            
+                                            <INPUT TYPE="submit" VALUE="Enviar datos">
+                                            <INPUT TYPE="reset">
+            
+                                            <A NAME="Abajo"></A>
+                                        </P>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                        </FORM>
+                    </CENTER>
+                    <A HREF="mailto:gonzalo.bauluz.barcena@ciclosmontecastelo.com?SUBJECT=Problema de registro">Contacto con Soporte</A><BR><BR>
+                    <A HREF="#Arriba">Volver al principio</A><BR><BR>
+            
+                </FONT>
+            </div>
+        </div>
+
+        <script src="game.js"></script>
+    </body>
+</html>
